@@ -1,0 +1,9 @@
+{
+  "name": "PawsOn — GSU Clarkston",
+  "short_name": "PawsOn",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f6fb",
+  "theme_color": "#0039A6",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
