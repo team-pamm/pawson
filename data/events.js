@@ -1,0 +1,223 @@
+/* =====================================================================
+   EVENTS — ALL MADE UP (demo)
+   =====================================================================
+   Dates count from today, so the demo always has something "tonight".
+   When you switch to real events, you can use real dates instead:
+   give an event a `date: "2026-12-03"` and it is used instead of `day`.
+
+   Fields
+     title     event name
+     building  building id (see data/buildings.js), or null = campus-wide
+     room      where in the building
+     day       0 = today, 1 = tomorrow, 2 = the day after…
+     date      optional real date "YYYY-MM-DD" (overrides day)
+     start     start time, 24-hour "19:00"
+     minutes   how long it lasts
+     allDay    true for all-day events (no start / minutes)
+     free      true = free, false = ticketed
+     format    optional "hybrid" (default: in person)
+     type      a short label shown as a tag
+   ===================================================================== */
+
+const DEMO_EVENTS = [
+  {
+    title: "Student Theatre Night: One-Act Plays",
+    building: "cf",
+    room: "Marvin Cole Auditorium",
+    day: 0,
+    start: "19:00",
+    minutes: 120,
+    free: false,
+    type: "Arts",
+  },
+  {
+    title: "Coding Club Hack Night",
+    building: "cl",
+    room: "Computer Area (CATLab)",
+    day: 0,
+    start: "17:30",
+    minutes: 120,
+    free: true,
+    type: "Club meeting",
+  },
+  {
+    title: "Swim Club Practice",
+    building: "cg",
+    room: "Swimming Pool",
+    day: 1,
+    start: "07:00",
+    minutes: 60,
+    free: true,
+    type: "Club meeting",
+  },
+  {
+    title: "Resume Review Drop-in",
+    building: "cb",
+    room: "Learning & Tutoring",
+    day: 1,
+    start: "10:00",
+    minutes: 120,
+    free: true,
+    type: "Career",
+  },
+  {
+    title: "Free Pizza Study Break",
+    building: "cn",
+    room: "Campus Café",
+    day: 1,
+    start: "12:00",
+    minutes: 60,
+    free: true,
+    type: "Food",
+  },
+  {
+    title: "Panther Spirit Day",
+    building: null,
+    room: "Campus quad",
+    day: 2,
+    start: "11:00",
+    minutes: 180,
+    free: true,
+    type: "Campus-wide",
+  },
+  {
+    title: "Intramural 3v3 Basketball",
+    building: "cg",
+    room: "Gymnasium",
+    day: 2,
+    start: "15:00",
+    minutes: 120,
+    free: true,
+    type: "Sports",
+  },
+  {
+    title: "International Food Festival",
+    building: "cn",
+    room: "Campus Café",
+    day: 3,
+    start: "11:30",
+    minutes: 150,
+    free: true,
+    type: "Culture",
+  },
+  {
+    title: "Math Help Marathon",
+    building: "ch",
+    room: "Math Lab",
+    day: 3,
+    start: "14:00",
+    minutes: 180,
+    free: true,
+    type: "Tutoring",
+  },
+  {
+    title: "Movie Night in the Auditorium",
+    building: "cl",
+    room: "Jim Cherry Auditorium",
+    day: 4,
+    start: "18:30",
+    minutes: 150,
+    free: true,
+    type: "Social",
+  },
+  {
+    title: "STEM Society Lab Demo Day",
+    building: "cc",
+    room: "STEM Lab",
+    day: 5,
+    start: "13:00",
+    minutes: 120,
+    free: true,
+    type: "Club meeting",
+  },
+  {
+    title: "Pre-Nursing Society Meetup",
+    building: "ch",
+    room: "Nutrition (Room 1800)",
+    day: 5,
+    start: "17:00",
+    minutes: 60,
+    free: true,
+    type: "Club meeting",
+  },
+  {
+    title: "ESL Conversation Hour",
+    building: "ca",
+    room: "Language Lab",
+    day: 6,
+    start: "16:00",
+    minutes: 60,
+    free: true,
+    type: "Language",
+  },
+  {
+    title: "Business Leaders Club Mixer",
+    building: "cb",
+    room: "Classroom CB1140",
+    day: 6,
+    start: "18:00",
+    minutes: 90,
+    free: true,
+    type: "Club meeting",
+  },
+  {
+    title: "Sunrise Wellness Walk",
+    building: "cg",
+    room: "Rec Front Desk",
+    day: 7,
+    start: "08:00",
+    minutes: 60,
+    free: true,
+    type: "Wellness",
+  },
+  {
+    title: "Nursing Program Info Session",
+    building: "ci",
+    room: "Nursing Classroom",
+    day: 8,
+    start: "12:30",
+    minutes: 60,
+    free: true,
+    format: "hybrid",
+    type: "Info session",
+  },
+  {
+    title: "Fall Jazz Ensemble Concert",
+    building: "cf",
+    room: "Marvin Cole Auditorium",
+    day: 9,
+    start: "19:30",
+    minutes: 120,
+    free: true,
+    type: "Arts",
+  },
+  {
+    title: "Campus Blood Drive",
+    building: "cn",
+    room: "Meeting Room 2220",
+    day: 10,
+    start: "10:00",
+    minutes: 300,
+    free: true,
+    type: "Community",
+  },
+  {
+    title: "Honors Poetry Slam",
+    building: "ce",
+    room: "Honors Lounge",
+    day: 12,
+    start: "15:00",
+    minutes: 90,
+    free: true,
+    type: "Arts",
+  },
+  {
+    title: "Finals Survival Kit Giveaway",
+    building: "cn",
+    room: "Information Desk",
+    day: 14,
+    allDay: true,
+    free: true,
+    type: "Giveaway",
+  },
+];
